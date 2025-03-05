@@ -36,4 +36,4 @@ Se utiliza una consola de powershell para ejecutar el docker compose, ejemplo:
 
 Es necesario que todos los servicios estén en ejecucion para ejecutar el proyecto
 
-![image](https://github.com/andreymax1230/N5Test/blob/ff08c8d84f5ccdab9e452ea9f6f2a3355059c6f7/DockerN5.png)
+![image](https://github.com/andreymax1230/N5Challenge/blob/502ff3764d4ec332ddbc5b52375d99cbc5c8ef15/DockerN5.png)
