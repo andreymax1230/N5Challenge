@@ -8,7 +8,7 @@ namespace N5.Presentation.Api.Controllers;
 public class UserPermissionController(IRequestReplayService requestReplayService) : ApiBaseController(requestReplayService)
 {
     [HttpPost]
-    public async Task<ActionResult<bool>> Post([FromBody] CreateUserPermissionDto request)
+    public async Task<ActionResult<ResponseCreateUserPermissionDto>> Post([FromBody] CreateUserPermissionDto request)
     {
         if (!ModelState.IsValid)
         {
@@ -19,7 +19,7 @@ public class UserPermissionController(IRequestReplayService requestReplayService
     }
 
     [HttpPut]
-    public async Task<ActionResult<bool>> Put([FromBody] UpdateUserPermissionDto request)
+    public async Task<ActionResult<ResponseUpdateUserPermissionDto>> Put([FromBody] UpdateUserPermissionDto request)
     {
         if (!ModelState.IsValid)
         {
