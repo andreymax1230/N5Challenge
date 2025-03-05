@@ -31,8 +31,5 @@ public class KafkaProducerService(IProducer<Null, string> _producerKafka,
         await _producerKafka.ProduceAsync(topic, new Message<Null, string> { Value = value.ToSerializeJSON() });
     });
 
-    public void Dispose()
-    {
-        _producerKafka.Dispose();
-    }
+    public void Dispose() => _producerKafka.Dispose();
 }

@@ -22,7 +22,7 @@ public class UserPermissionQueryHandler(IRepository<Domain.Entities.UserPermissi
             var list = MapperConfig.Mapper.Map<List<GetUserPermissionDto>>(listBD);
             response.Response = list;
         }
-        catch (global::System.Exception ex)
+        catch (Exception ex)
         {
             response.ErrorMessage = ex.Message;
         }

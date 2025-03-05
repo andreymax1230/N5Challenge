@@ -9,8 +9,5 @@ public class ApiBaseController : Controller
 {
     protected IRequestReplayService RequestReplayService;
 
-    public ApiBaseController(IRequestReplayService requestReplayService)
-    {
-        RequestReplayService = requestReplayService;
-    }
+    public ApiBaseController(IRequestReplayService requestReplayService) => RequestReplayService = requestReplayService;
 }
