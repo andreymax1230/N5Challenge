@@ -6,22 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace N5.Kafka.Eda.Services;
 
-public class KafkaProducerService : IKafkaProducerService, IDisposable
+public class KafkaProducerService(IProducer<Null, string> _producerKafka,
+                                  IServiceProvider _serviceProvider) : IKafkaProducerService, IDisposable
 {
-    private readonly IProducer<Null, string> _producerKafka;
-    private readonly IServiceProvider _serviceProvider;
-
-    /// <summary>
-    /// Constructor base
-    /// </summary>
-    /// <param name="configurationBroker">Configuration Broker</param>
-    /// <param name="serviceProvider">Service Dependency Injection</param>
-    /// <param name="configurationSettings">Information Appsettings</param>
-    public KafkaProducerService(IProducer<Null, string> producerKafka, IServiceProvider serviceProvider)
-    {
-        _producerKafka = producerKafka;
-        _serviceProvider = serviceProvider;
-    }
 
     /// <summary>
     /// Suscribe Topics and consumer events

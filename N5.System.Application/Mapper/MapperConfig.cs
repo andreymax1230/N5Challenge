@@ -1,25 +1,19 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace N5.System.Application.Mapper
+namespace N5.System.Application.Mapper;
+
+internal class MapperConfig
 {
-    public class MapperConfig
+    private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
     {
-        private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
+        var config = new MapperConfiguration(cfg =>
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
-                cfg.AddProfile<MappingUserPermission>();
-            });
-            var mapper = config.CreateMapper();
-            return mapper;
+            cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
+            cfg.AddProfile<MappingUserPermission>();
         });
+        var mapper = config.CreateMapper();
+        return mapper;
+    });
 
-        public static IMapper Mapper => Lazy.Value;
-    }
+    public static IMapper Mapper => Lazy.Value;
 }

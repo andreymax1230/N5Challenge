@@ -13,19 +13,9 @@ using Newtonsoft.Json;
 namespace N5.RequestReply.Eda.Service;
 
 [KafkaTopicAttribute(UserEvent.GenerateGenericSucessEvent)]
-public class RequestReplyService : IRequestReplayService
+public class RequestReplyService(IRequestReplayRepository _replyRepository,
+                                 IKafkaProducerService _kafkaProducerService) : IRequestReplayService
 {
-    #region members
-    private readonly IRequestReplayRepository _replyRepository;
-    private readonly IKafkaProducerService _kafkaProducerService;
-    #endregion
-
-
-    public RequestReplyService(IRequestReplayRepository replyRepository, IKafkaProducerService kafkaProducerService)
-    {
-        _replyRepository = replyRepository;
-        _kafkaProducerService = kafkaProducerService;
-    }
 
     public async Task Handler(KafkaMessage meesage, CancellationToken token)
     {

@@ -7,11 +7,11 @@ public static class StartupExtensions
 {
     public static IApplicationBuilder InitializeBD(this IApplicationBuilder builder)
     {
-        InitializData(builder.ApplicationServices);
+        InitializeData(builder.ApplicationServices);
         return builder;
     }
 
-    private static void InitializData(IServiceProvider serviceProvider)
+    private static void InitializeData(IServiceProvider serviceProvider)
     {
         using var scope = serviceProvider.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<Entities>();

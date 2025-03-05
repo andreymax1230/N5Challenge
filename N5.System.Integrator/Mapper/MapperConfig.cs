@@ -2,7 +2,7 @@
 
 namespace N5.System.Integrator.Mapper;
 
-public class MapperConfig
+internal class MapperConfig
 {
     private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
     {

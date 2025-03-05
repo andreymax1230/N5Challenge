@@ -1,6 +1,5 @@
 ﻿using Confluent.Kafka;
 using Confluent.Kafka.Admin;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using N5.Kafka.Eda.Interface;
 using N5.Kafka.Eda.Interfaces;
@@ -8,26 +7,11 @@ using N5.Kafka.Eda.Model;
 
 namespace N5.Kafka.Eda.Agent;
 
-public class KafkaAgent : IKafkaAgent
+public class KafkaAgent(IAdminClient _adminClient,
+                        IConsumer<Ignore, string> _consumer,
+                        IKafkaHandlerList _kafkaHandlerList,
+                        IServiceProvider _serviceProvider) : IKafkaAgent
 {
-    private readonly IAdminClient _adminClient;
-    private readonly IConsumer<Ignore, string> _consumer;
-    private readonly IKafkaHandlerList _kafkaHandlerList;
-    private readonly IServiceProvider _serviceProvider;
-
-
-    #region ctro
-    public KafkaAgent(IAdminClient adminClient,
-                      IConsumer<Ignore, string> consumer,
-                      IKafkaHandlerList kafkaHandlerList,
-                      IServiceProvider serviceProvider)
-    {
-        _adminClient = adminClient;
-        _consumer = consumer;
-        _kafkaHandlerList = kafkaHandlerList;
-        _serviceProvider = serviceProvider;
-    }
-    #endregion
 
     /// <summary>
     /// Generate topic in Kafka Broker
