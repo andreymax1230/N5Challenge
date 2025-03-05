@@ -20,7 +20,7 @@ El Challenge Técnico se desarrollo con Arquitectura EDA (Arquitectura basada en
 * Mongo DB para el almacenamiento de los eventos.
 
 # Diagrama de diseño
-[![image](https://github.com/andreymax1230/N5Test/blob/4e9b70186fedecf0a3556cbad98c91a8b643476a/ArquitecturaEda.drawio.png)](https://github.com/andreymax1230/N5Test/blob/4e9b70186fedecf0a3556cbad98c91a8b643476a/ArquitecturaEda.drawio.png)
+![image](https://github.com/andreymax1230/N5Challenge/blob/1f71d6d209bab5c6c1856e300fefb6628eb6b178/ArquitecturaEda.drawio.png)
 
 # Ejecución
 Para ejecutar el proyecto es necesario ejecutar las imagenes de docker (docker-compose.yaml) que contiene los siguientes servicios para el funcionamiento correcto del proyecto:
@@ -36,4 +36,4 @@ Se utiliza una consola de powershell para ejecutar el docker compose, ejemplo:
 
 Es necesario que todos los servicios estén en ejecucion para ejecutar el proyecto
 
-![image](https://github.com/andreymax1230/N5Test/blob/ff08c8d84f5ccdab9e452ea9f6f2a3355059c6f7/DockerN5.png)
+![image](https://github.com/andreymax1230/N5Challenge/blob/502ff3764d4ec332ddbc5b52375d99cbc5c8ef15/DockerN5.png)
